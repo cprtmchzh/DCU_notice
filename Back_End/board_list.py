@@ -1,8 +1,7 @@
 import urllib.request
-from http import HTTPStatus
 from flask_cors import CORS
 from bs4 import BeautifulSoup
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -10,7 +9,7 @@ CORS(app)
 
 @app.route("/notice", methods = ["GET"])
 def index():
-    url = "https://www.cu.ac.kr/plaza/notice/notice"
+    url = request.args.get("url")
     req = urllib.request.Request(url)
     sourcecode = urllib.request.urlopen(url).read()
     soup = BeautifulSoup(sourcecode, "html.parser")
