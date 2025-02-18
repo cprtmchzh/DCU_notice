@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <>
             <Sidebar />
-            {children}
+            <div className="table-container">{children}</div>
         </>
     );
 }

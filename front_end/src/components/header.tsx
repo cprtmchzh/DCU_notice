@@ -8,7 +8,7 @@ export default function Header() {
     console.log('path:', path);
 
     return (
-        <header className="navbar">
+        <header className="x-240 y-0 w-1200 h-80 text-white bg-gray-400">
             <nav className="top-menu">
                 <li>
                     <Link href="/notice">DCU 공지</Link>

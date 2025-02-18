@@ -33,7 +33,7 @@ export default function Sidebar() {
                         <Link href="/notice/recruitment">교내모집공지</Link> {path === '/notice/recruitment' ? '🫠' : ''}
                     </li>
                     <li>
-                        <Link href="/notice/event">교외공지</Link> {path === '/notice/event' ? '🫠' : ''}
+                        <Link href="/notice/event">교외소식</Link> {path === '/notice/event' ? '🫠' : ''}
                     </li>
                 </ul>
             </nav>
