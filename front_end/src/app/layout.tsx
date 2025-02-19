@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/header';
+import Sidebar from '../components/sidebar';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -9,8 +10,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Document</title>
             </head>
-            <body>
-                <Header />
+            <body className="bg-background">
+                <Header></Header>
                 {children}
             </body>
         </html>
