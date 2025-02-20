@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#FAFBFF",
-        sidebar: "#FFFFFF",
+        background: "#FAFBFF",  
+        white: "#FFFFFF",
         active: "#6A47EC",
         hover: "#5932EA",
       },

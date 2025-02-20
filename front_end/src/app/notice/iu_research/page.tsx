@@ -32,35 +32,38 @@ export default function IuResearchListPage() {
     }, []);
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>작성자</th>
-                    <th>등록일</th>
-                </tr>
-            </thead>
-            <tbody>
-                {notice.length > 0 ? (
-                    notice.map((item, index) => (
-                        <tr key={index}>
-                            <td>{item.type}</td>
-                            <td>
-                                <Link href={item.hyperlink} target="_blank">
-                                    {item.name}
-                                </Link>
-                            </td>
-                            <td>{item.writer}</td>
-                            <td>{item.date}</td>
-                        </tr>
-                    ))
-                ) : (
+        <>
+            <h1 className="text-2xl font-bold text-center">산학연구공지</h1>
+            <table className="w-full border-collapse mt-2.5">
+                <thead>
                     <tr>
-                        <td>loading...</td>
+                        <th className="p-3 text-center font-bold text-gray-400 border-b-[1px]">번호</th>
+                        <th className="p-3 text-center font-bold text-gray-400 border-b-[1px]">제목</th>
+                        <th className="p-3 text-center font-bold text-gray-400 border-b-[1px]">작성자</th>
+                        <th className="p-3 text-center font-bold text-gray-400 border-b-[1px]">등록일</th>
                     </tr>
-                )}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {notice.length > 0 ? (
+                        notice.map((item, index) => (
+                            <tr key={index}>
+                                <td className="text-center p-3 border-b-[1px]">{item.type}</td>
+                                <td className="text-center p-3 border-b-[1px]">
+                                    <Link href={item.hyperlink} target="_blank">
+                                        {item.name}
+                                    </Link>
+                                </td>
+                                <td className="text-center p-3 border-b-[1px]">{item.writer}</td>
+                                <td className="text-center p-3 border-b-[1px]">{item.date}</td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td></td>
+                        </tr>
+                    )}
+                </tbody>
+            </table>
+        </>
     );
 }

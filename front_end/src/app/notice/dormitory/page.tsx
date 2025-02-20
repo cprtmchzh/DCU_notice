@@ -3,23 +3,23 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
-const URL = 'http://localhost:5000/notice?url=https://www.cu.ac.kr/plaza/notice/event';
+const URL = 'http://localhost:5000/dormitory?url=https://dormitory.cu.ac.kr/board_Qgpk79';
 
-async function getEventList() {
+async function getDormitoryList() {
     console.log('Fetching...');
     const res = await fetch(URL);
     const json = await res.json();
     return json;
 }
 
-export default function EventListPage() {
+export default function DormitoryListPage() {
     const [notice, setNotice] = useState<{ type: string; hyperlink: string; name: string; date: string; writer: string }[]>([]);
     const [loading, setLoading] = useState(true); // 로딩 상태 관리
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await getEventList();
+                const data = await getDormitoryList();
                 setNotice(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -33,7 +33,7 @@ export default function EventListPage() {
 
     return (
         <>
-            <h1 className="text-2xl font-bold text-center">교외소식</h1>
+            <h1 className="text-2xl font-bold text-center">기숙사</h1>
             <table className="w-full border-collapse mt-2.5">
                 <thead>
                     <tr>
