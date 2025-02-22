@@ -8,10 +8,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#FAFBFF",  
-        white: "#FFFFFF",
-        active: "#6A47EC",
-        hover: "#5932EA",
+        background: "#FAFBFF",
+        sidebarActive: "#5932EA",
+        sidebarHover: "#ac98f4",
       },
     },
   },
