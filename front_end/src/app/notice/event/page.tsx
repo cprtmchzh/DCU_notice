@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
-const URL = 'http://localhost:5000/notice?url=https://www.cu.ac.kr/plaza/notice/event';
+const URL = 'http://192.168.0.63:5000/notice?url=https://www.cu.ac.kr/plaza/notice/event';
 
 async function getEventList() {
     console.log('Fetching...');

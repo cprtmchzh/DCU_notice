@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
-const URL = 'http://localhost:5000/dormitory?url=https://dormitory.cu.ac.kr/board_Qgpk79';
+const URL = 'http://192.168.0.63:5000/dormitory?url=https://dormitory.cu.ac.kr/board_Qgpk79';
 
 async function getDormitoryList() {
     console.log('Fetching...');

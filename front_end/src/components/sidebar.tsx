@@ -9,7 +9,7 @@ export default function Sidebar() {
     console.log('path:', path);
 
     return (
-        <aside className="sticky top-6 rounded-2xl border bg-white p-5 md:p-6 col-span-1 h-[650px] mini:absolute">
+        <aside className="sm:sticky top-6 rounded-2xl border bg-white p-5 md:p-6 col-span-3 h-[650px] sm:col-span-1 hidden sm:block">
             <div className="font-bold text-2xl pb-[20px]">
                 <Link href="/notice">DCU 공지사항</Link>
             </div>

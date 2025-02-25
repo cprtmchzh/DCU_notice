@@ -32,10 +32,10 @@ export default function NoticeListPage() {
             <tbody>
                 {notice.map((item, index) => (
                     <tr key={index} className="cursor-pointer hover:bg-gray-100 active:bg-gray-200" onClick={() => window.open(item.hyperlink)}>
-                        <td className="text-center p-3 border-b-[1px]">{item.type}</td>
-                        <td className="text-center p-3 border-b-[1px]">{item.name}</td>
-                        <td className="text-center p-3 border-b-[1px]">{item.writer}</td>
-                        <td className="text-center p-3 border-b-[1px]">{item.date}</td>
+                        <td className="text-center p-3 border-b-[1px] text-sm sm:text-base">{item.type}</td>
+                        <td className="text-center p-3 border-b-[1px] text-sm sm:text-base">{item.name}</td>
+                        <td className="text-center p-3 border-b-[1px] hidden sm:table-cell">{item.writer}</td>
+                        <td className="text-center p-3 border-b-[1px] hidden sm:table-cell">{item.date}</td>
                     </tr>
                 ))}
             </tbody>
