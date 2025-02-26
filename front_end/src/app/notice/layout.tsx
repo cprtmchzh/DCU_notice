@@ -4,12 +4,12 @@ import Sidebar from '../../components/sidebar';
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 md:gap-6">
+            <div className="sm:grid sm:ap-4 sm:grid-cols-4 sm:gap-6">
                 <Sidebar />
-                <div className="rounded-2xl border p-5 md:p-6 bg-white col-span-3">
-                    <table className="w-full mt-2.5">
+                <div className="sm:rounded-2xl sm:border sm:bg-white sm:p-6 sm:col-span-3">
+                    <table className="sm:w-full sm:mt-2.5">
                         <thead>
-                            <tr className="p-3 text-center font-bold text-gray-400 border-b-[1px]"></tr>
+                            <tr className="sm:p-3 sm:text-center sm:font-bold sm:text-gray-400 sm:border-b-[1px]"></tr>
                         </thead>
                         {children}
                     </table>

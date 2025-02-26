@@ -1,5 +1,6 @@
 'use client';
 
+import { noticeInfo } from '@/src/ui/design';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
@@ -33,10 +34,10 @@ export default function DormitoryListPage() {
             <tbody>
                 {notice.map((item, index) => (
                     <tr key={index} className="cursor-pointer hover:bg-gray-100 active:bg-gray-200" onClick={() => window.open(item.hyperlink)}>
-                        <td className="text-center p-3 border-b-[1px]">{item.type}</td>
-                        <td className="text-center p-3 border-b-[1px]">{item.name}</td>
-                        <td className="text-center p-3 border-b-[1px]">{item.writer}</td>
-                        <td className="text-center p-3 border-b-[1px]">{item.date}</td>
+                        <td className={noticeInfo()}>{item.type}</td>
+                        <td className={noticeInfo()}>{item.name}</td>
+                        <td className={noticeInfo()}>{item.writer}</td>
+                        <td className={noticeInfo()}>{item.date}</td>
                     </tr>
                 ))}
             </tbody>

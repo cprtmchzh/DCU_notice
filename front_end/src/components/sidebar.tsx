@@ -9,13 +9,13 @@ export default function Sidebar() {
     console.log('path:', path);
 
     return (
-        <aside className="sm:sticky top-6 rounded-2xl border bg-white p-5 md:p-6 col-span-3 h-[650px] sm:col-span-1 hidden sm:block">
-            <div className="font-bold text-2xl pb-[20px]">
+        <aside className="sm:sticky sm:top-6 sm:rounded-2xl sm:border sm:bg-white sm:p-6 sm:h-[650px] sm:col-span-1 sm:block">
+            <div className="text-center flex items-center justify-between w-full gap-2 px-3 py-3 border-b border-gray-200 dark:border-gray-800 sm:gap-4 lg:justify-normal lg:border-b-0 lg:px-0 lg:py-4 sm:font-bold sm:text-2xl sm:pb-[20px]">
                 <Link href="/notice">DCU 공지사항</Link>
             </div>
-            <ul className="p-0 list-none">
-                <li className={sideButton('/notice/lesson')}>
-                    <Link href="/notice/lesson" className="block">
+            <ul className="sm:p-0 sm:list-none">
+                <li className={`${sideButton('/notice/lesson')}`}>
+                    <Link href="/notice/lesson" className="sm:hover:text-white sm:block">
                         학사공지(수업/학적)
                     </Link>
                 </li>
