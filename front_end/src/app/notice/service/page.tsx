@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
-const URL = 'http://192.168.0.63:5000/notice?url=https://www.cu.ac.kr/plaza/notice/service';
+const URL = 'http://localhost:5000/notice?url=https://www.cu.ac.kr/plaza/notice/service';
 
 async function getServiceList() {
     console.log('Fetching...');
@@ -33,10 +33,18 @@ export default function ServiceListPage() {
             <tbody>
                 {notice.map((item, index) => (
                     <tr key={index} className="cursor-pointer hover:bg-gray-100 active:bg-gray-200" onClick={() => window.open(item.hyperlink)}>
-                        <td className="text-center p-3 border-b-[1px]">{item.type}</td>
-                        <td className="text-center p-3 border-b-[1px]">{item.name}</td>
-                        <td className="text-center p-3 border-b-[1px]">{item.writer}</td>
-                        <td className="text-center p-3 border-b-[1px]">{item.date}</td>
+                        <td className="text-center p-3 border-b-[1px] text-xs sm:text-base">{item.type}</td>
+                        <td className="p-3 border-b-[1px] text-sm sm:hidden">
+                            <div className="flex flex-col">
+                                <span className="max-w-64 overflow-hidden text-ellipsis whitespace-nowrap">{item.name}</span>
+                                <span className="text-xs text-right pt-1 text-gray-500">
+                                    {item.writer} | {item.date}
+                                </span>
+                            </div>
+                        </td>
+                        <td className="hidden text-center p-3 border-b-[1px] sm:table-cell">{item.name}</td>
+                        <td className="hidden text-center p-3 border-b-[1px] sm:table-cell">{item.writer}</td>
+                        <td className="hidden text-center p-3 border-b-[1px] sm:table-cell">{item.date}</td>
                     </tr>
                 ))}
             </tbody>
