@@ -37,14 +37,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>{currentPath[pathname] || '공지사항'}</title>
             </head>
-            <body className="sm:p-6 sm:mx-auto sm:max-w-screen-2xl">
+            <body className="lg:p-6 lg:mx-auto lg:max-w-screen-2xl">
                 <Header />
-                <div className="p-4 mx-auto max-w-screen-2xl sm:p-0">
-                    <div className="flex flex-wrap items-center justify-between gap-3 sm:hidden relative">
+                <div className="p-4 mx-auto max-w-screen-2xl lg:p-0">
+                    <div className="flex flex-wrap items-center justify-between gap-3 lg:hidden relative">
                         <h2 className="p-4 text-xl font-semibold text-gray-800">{currentPath[pathname] || 'Page'}</h2>
                         <button
                             onClick={handleDropdown}
-                            className="sm:hidden text-2xl flex items-center w-10 dropdown-toggle text-gray-300 justify-center bg-white h-10 transition-colors border rounded-lg max-w-10 active:bg-gray-100"
+                            className="lg:hidden text-2xl flex items-center w-10 dropdown-toggle text-gray-300 justify-center bg-white h-10 transition-colors border rounded-lg max-w-10 active:bg-gray-100"
                         >
                             =
                         </button>

@@ -9,7 +9,7 @@ export default function Header() {
     console.log('path:', path);
 
     return (
-        <header className="z-50 sticky top-0 flex w-full bg-white border-gray-200 sm:hidden">
+        <header className="z-50 sticky top-0 flex w-full bg-white border-gray-200 lg:hidden">
             <div className="flex flex-col justify-between flex-grow">
                 <div className="w-full px-3 py-4 border-b border-gray-200 text-center">
                     <Link href="/notice" className="font-bold text-2xl">
