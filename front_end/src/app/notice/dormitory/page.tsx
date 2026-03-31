@@ -1,24 +1,25 @@
 'use client';
 
+import { noticeInfo } from '@/src/ui/design';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
-const URL = 'http://localhost:5000/notice?url=https://www.cu.ac.kr/plaza/notice/lesson';
+const URL = 'http://localhost:5000/dormitory?url=https://dormitory.cu.ac.kr/board_Qgpk79';
 
-async function getLessonList() {
+async function getDormitoryList() {
     console.log('Fetching...');
     const res = await fetch(URL);
     const json = await res.json();
     return json;
 }
 
-export default function LessonListPage() {
+export default function DormitoryListPage() {
     const [notice, setNotice] = useState<{ type: string; hyperlink: string; name: string; date: string; writer: string }[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await getLessonList();
+                const data = await getDormitoryList();
                 setNotice(data);
             } catch (error) {
                 console.error('Error fetching data:', error);

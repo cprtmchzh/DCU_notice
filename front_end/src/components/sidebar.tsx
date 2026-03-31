@@ -2,41 +2,64 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { sideButton } from '../ui/design';
 
 export default function Sidebar() {
     const path = usePathname();
     console.log('path:', path);
 
     return (
-        <aside className="sidebar">
-            <nav>
-                <ul className="category">
-                    <li>
-                        <Link href="/notice/lesson">학사공지(수업/학적)</Link> {path === '/notice/lesson' ? '🫠' : ''}
-                    </li>
-                    <li>
-                        <Link href="/notice/scholarship">장학공지</Link> {path === '/notice/scholarship' ? '🫠' : ''}
-                    </li>
-                    <li>
-                        <Link href="/notice/service">봉사공지</Link> {path === '/notice/service' ? '🫠' : ''}
-                    </li>
-                    <li>
-                        <Link href="/notice/program">진로·취업공지</Link> {path === '/notice/program' ? '🫠' : ''}
-                    </li>
-                    <li>
-                        <Link href="/notice/recruit">채용정보</Link> {path === '/notice/recruit' ? '🫠' : ''}
-                    </li>
-                    <li>
-                        <Link href="/notice/iu_research">산학연구공지</Link> {path === '/notice/iu_research' ? '🫠' : ''}
-                    </li>
-                    <li>
-                        <Link href="/notice/recruitment">교내모집공지</Link> {path === '/notice/recruitment' ? '🫠' : ''}
-                    </li>
-                    <li>
-                        <Link href="/notice/event">교외공지</Link> {path === '/notice/event' ? '🫠' : ''}
-                    </li>
-                </ul>
-            </nav>
+        <aside className="hidden lg:sticky lg:top-6 lg:rounded-2xl lg:border lg:bg-white lg:p-6 lg:h-[650px] lg:col-span-1 lg:block">
+            <div className="lg:font-bold lg:text-2xl lg:pb-[20px]">
+                <Link href="/notice">DCU 공지사항</Link>
+            </div>
+            <ul className="lg:p-0 lg:list-none">
+                <li className={`${sideButton('/notice/lesson')}`}>
+                    <Link href="/notice/lesson" className="hover:text-white block">
+                        학사공지(수업/학적)
+                    </Link>
+                </li>
+                <li className={sideButton('/notice/scholarship')}>
+                    <Link href="/notice/scholarship" className="hover:text-white block">
+                        장학공지
+                    </Link>
+                </li>
+                <li className={sideButton('/notice/service')}>
+                    <Link href="/notice/service" className="hover:text-white block">
+                        봉사공지
+                    </Link>
+                </li>
+                <li className={sideButton('/notice/program')}>
+                    <Link href="/notice/program" className="hover:text-white block">
+                        진로·취업공지
+                    </Link>
+                </li>
+                <li className={sideButton('/notice/recruit')}>
+                    <Link href="/notice/recruit" className="hover:text-white block">
+                        채용정보
+                    </Link>
+                </li>
+                <li className={sideButton('/notice/iu_research')}>
+                    <Link href="/notice/iu_research" className="hover:text-white block">
+                        산학연구공지
+                    </Link>
+                </li>
+                <li className={sideButton('/notice/recruitment')}>
+                    <Link href="/notice/recruitment" className="hover:text-white block">
+                        교내모집공지
+                    </Link>
+                </li>
+                <li className={sideButton('/notice/event')}>
+                    <Link href="/notice/event" className="hover:text-white block">
+                        교외소식
+                    </Link>
+                </li>
+                <li className={sideButton('/notice/dormitory')}>
+                    <Link href="/notice/dormitory" className="hover:text-white block">
+                        기숙사
+                    </Link>
+                </li>
+            </ul>
         </aside>
     );
 }
